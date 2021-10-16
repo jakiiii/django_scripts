@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Multiple Select || {{ block.super }}{% endblock %}
+
+
+{% block container %}
+    <style>
+        #id_language {
+            width: 20rem;
+        }
+        #id_name{
+            width: 26rem;
+        }
+    </style>
+
+    <h3>Multiple Select</h3>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Dropdown Multiple Select</div>
+                <div class="card-body">
+                    <form method="post" action="#">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button style="margin-left: 9.5rem;" type="submit" class="btn btn-sm btn-outline-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Dropdown Multiple Select</div>
+                <div class="card-body">
+                <form method="post" action="{% url 'sel:select-multiple' %}">{% csrf_token %}
+                    <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="name" id="inputName" placeholder="name">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Language</label>
+                        <div class="col-sm-10">
+                            <select name="language" multiple id="language" class="form-select" aria-label="Default select example">
+                                {% for language in languages %}
+                                <option value="{{ language.id }}">{{ language.title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#id_language").select2({
+                maximumSelectionLength: 10,
+                {#placeholder:'Select favourite language',#}
+                multiple: 'multiple',
+                allowClear: true,
+                closeOnSelect: false,
+            });
+
+            $("#language").select2({
+                maximumSelectionLength: 10,
+                placeholder:'Select favourite language',
+                multiple: 'multiple',
+                allowClear: true,
+                closeOnSelect: false,
+            });
+        });
+    </script>
+{% endblock %}

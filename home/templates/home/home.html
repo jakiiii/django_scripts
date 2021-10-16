@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Home || {{ block.super }}{% endblock %}
+
+
+{% block container %}
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">Select2</li>
+                <li class="list-group-item"><a href="{% url 'sel:select-search' %}" class="btn">Select2 - Single Select Search</a></li>
+                <li class="list-group-item"><a href="{% url 'sel:select-multiple' %}" class="btn">Select2 - Dropdown Multiple Select</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">search box</p>
+                    <p type="button" class="btn btn-warning btn-sm">multiple select</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">Celery</li>
+                <li class="list-group-item"><a href="{% url 'task:send-review-email' %}" class="btn">Celery - Send Review Email</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">rabbitmq</p>
+                    <p type="button" class="btn btn-warning btn-sm">celery</p>
+                    <p type="button" class="btn btn-warning btn-sm">flower</p>
+                    <p type="button" class="btn btn-warning btn-sm">django-celery-beat</p>
+                    <p type="button" style="margin-top: -10px;" class="btn btn-warning btn-sm">django-celery-results</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">FEATURE 3</li>
+                <li class="list-group-item"><a href="{% url 'task:send-review-email' %}" class="btn">Celery - Send Review Email</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

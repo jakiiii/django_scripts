@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Select2 || {{ block.super }}{% endblock %}
+
+
+{% block container %}
+    <style>
+        #id_language{
+            width: 20rem;
+        }
+        #id_name{
+            width: 26rem;
+        }
+    </style>
+
+    <h3>Select2</h3>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Dropdown with Searching
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'sel:select-search' %}">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" style="margin-left: 9.5rem;" class="btn btn-sm btn-outline-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Card Box
+                </div>
+                <div class="card-body"></div>
+            </div>
+        </div>
+    </div>
+
+
+{#    <script>#}
+{#        $(document).ready(function() {#}
+{#            $('#id_language').select2();#}
+{#        });#}
+{#    </script>#}
+
+    <script>
+        $(document).ready(function () {
+            $('#id_language').select2({
+                ajax: {
+                    url: '{% url 'sel:select-search' %}',
+                    dataType: 'json',
+                    processResults: function (data) {
+                        return {
+                            results: $.map(data, function (item) {
+                                return {id: item.id, text: item.title};
+                            })
+                        };
+                    }
+                },
+                minimumInputLength: 1
+            });
+        });
+    </script>
+{% endblock %}

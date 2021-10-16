@@ -1,0 +1,9 @@
+[
+{
+  "model": "celery_task.post",
+  "pk": 1,
+  "fields": {
+    "name": "JAKI"
+  }
+}
+]
