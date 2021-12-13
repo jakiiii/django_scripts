@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Multiple Select || {{ block.super }}{% endblock %}
+
+
+{% block container %}
+    <style>
+        #id_language {
+            width: 20rem;
+        }
+        #id_name{
+            width: 26rem;
+        }
+    </style>
+
+    <h3>Multiple Select</h3>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Country Multiple Select</div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'sel:country-multiple' %}">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button style="margin-left: 9.5rem;" type="submit" class="btn btn-sm btn-outline-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#id_name").select2({
+                maximumSelectionLength: 10,
+                {#placeholder:'Select favourite language',#}
+                multiple: 'multiple',
+                allowClear: true,
+                closeOnSelect: false,
+            });
+        });
+    </script>
+{% endblock %}

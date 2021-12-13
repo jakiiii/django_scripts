@@ -1,5 +1,12 @@
 from django import forms
-from .models import Language, Entry, EntryName
+from .models import Language, Entry, EntryName, Country
+
+COUNTRY = (
+    ('bangladesh', 'Bangladesh'),
+    ('pakistan', 'pakistan'),
+    ('india', 'India'),
+    ('nepal', 'Nepal'),
+)
 
 
 class EntryCreationForm(forms.ModelForm):
@@ -26,4 +33,14 @@ class EntryMultipleCreationForm(forms.ModelForm):
         fields = [
             'name',
             'language',
+        ]
+
+
+class CountryCreationForm(forms.ModelForm):
+    name = forms.TypedChoiceField(choices=COUNTRY, label='Country Name')
+
+    class Meta:
+        model = Country
+        fields = [
+            'name'
         ]

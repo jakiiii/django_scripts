@@ -9,6 +9,7 @@
                 <li class="list-group-item list-group-item-action list-group-item-dark active">Select2</li>
                 <li class="list-group-item"><a href="{% url 'sel:select-search' %}" class="btn">Select2 - Single Select Search</a></li>
                 <li class="list-group-item"><a href="{% url 'sel:select-multiple' %}" class="btn">Select2 - Dropdown Multiple Select</a></li>
+                <li class="list-group-item"><a href="{% url 'sel:country-multiple' %}" class="btn">Country Multiple Select</a></li>
                 <li class="list-group-item">
                     <p type="button" class="btn btn-warning btn-sm">search box</p>
                     <p type="button" class="btn btn-warning btn-sm">multiple select</p>
@@ -30,8 +31,29 @@
         </div>
         <div class="col-4">
             <ul class="list-group">
-                <li class="list-group-item list-group-item-action list-group-item-dark active">FEATURE 3</li>
-                <li class="list-group-item"><a href="{% url 'task:send-review-email' %}" class="btn">Celery - Send Review Email</a></li>
+                <li class="list-group-item list-group-item-action list-group-item-dark active">Export Import Excel</li>
+                <li class="list-group-item"><a href="{% url 'excel:export-excel' %}" class="btn">Export Excel</a></li>
+                <li class="list-group-item"><a href="{% url 'excel:import-excel' %}" class="btn">Import Excel</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">export excel</p>
+                    <p type="button" class="btn btn-warning btn-sm">import excel</p>
+                    <p type="button" class="btn btn-warning btn-sm">pandas</p>
+                    <p type="button" class="btn btn-warning btn-sm">faker</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">Django Filter</li>
+                <li class="list-group-item"><a href="{% url 'dfilter:filter' %}" class="btn">Filter</a></li>
+                <li class="list-group-item"><a href="{% url 'api_dfilter:api-filter' %}" class="btn">API Filter</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">django-filter</p>
+                    <p type="button" class="btn btn-warning btn-sm">api-filter</p>
+                </li>
             </ul>
         </div>
     </div>

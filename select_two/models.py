@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class Language(models.Model):
@@ -22,3 +23,8 @@ class EntryName(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Country(models.Model):
+    # ArrayField only for postgres database
+    name = ArrayField(ArrayField(models.CharField(max_length=10, blank=True), size=8,), size=8,)

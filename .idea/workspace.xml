@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dcde33f-a1c5-418a-af82-09cb7b1a4220" name="Default Changelist" comment="" />
+    <list default="true" id="7dcde33f-a1c5-418a-af82-09cb7b1a4220" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dfilters/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/api/filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/api/paginations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/api/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/api/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/api/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/management/commands/create_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/templates/dfilters/djfilter_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dfilters/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excelhandling/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excelhandling/seed.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excelhandling/templates/excelhandling/upload.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excelhandling/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/excelhandling/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiple_image/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiple_image/api/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiple_image/api/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiple_image/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiple_image/api/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiple_image/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/select_two/templates/select_two/country.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/titles.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_scripts/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_scripts/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_scripts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_scripts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select_two/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/select_two/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select_two/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/select_two/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select_two/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/select_two/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select_two/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/select_two/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select_two/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/select_two/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/css.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +56,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1zPgddylvakWOot8oT7MIFjdxiQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,13 +68,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dfilters/api" />
+      <recent name="$PROJECT_DIR$/excelhandling" />
       <recent name="$PROJECT_DIR$/celery_task/templates/celery_task" />
       <recent name="$PROJECT_DIR$/home" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,7 +138,32 @@
       <workItem from="1634226291242" duration="605000" />
       <workItem from="1634227018480" duration="8721000" />
       <workItem from="1634305435552" duration="270000" />
-      <workItem from="1634308392887" duration="8541000" />
+      <workItem from="1634308392887" duration="10282000" />
+      <workItem from="1634431775520" duration="4113000" />
+      <workItem from="1634444174621" duration="8328000" />
+      <workItem from="1634466420414" duration="105000" />
+      <workItem from="1634479433996" duration="604000" />
+      <workItem from="1634487595684" duration="599000" />
+      <workItem from="1634515762102" duration="600000" />
+      <workItem from="1634531086617" duration="23000" />
+      <workItem from="1634540988871" duration="20000" />
+      <workItem from="1634541268950" duration="4985000" />
+      <workItem from="1636118771178" duration="222000" />
+      <workItem from="1636962401395" duration="6275000" />
+      <workItem from="1637735737157" duration="18000" />
+      <workItem from="1637945926196" duration="617000" />
+      <workItem from="1637987205769" duration="1753000" />
+      <workItem from="1637994949941" duration="12000" />
+      <workItem from="1638014966283" duration="13415000" />
+      <workItem from="1638073906645" duration="4247000" />
+      <workItem from="1638256819874" duration="49000" />
+      <workItem from="1638365440962" duration="1169000" />
+      <workItem from="1638366897463" duration="423000" />
+      <workItem from="1638976972268" duration="4543000" />
+      <workItem from="1639026372621" duration="25000" />
+      <workItem from="1639059110743" duration="1079000" />
+      <workItem from="1639062813218" duration="5344000" />
+      <workItem from="1639230852826" duration="155000" />
     </task>
     <servers />
   </component>
@@ -101,30 +171,38 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="700" y="358" width="581" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1636963122464">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="700" y="358" width="581" height="397" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1636963122464" />
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1634349205033">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1634349205033" />
-    <state width="1802" height="275" key="GridCell.Tab.0.bottom" timestamp="1634346458006">
+    <state width="1802" height="266" key="GridCell.Tab.0.bottom" timestamp="1639068761242">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1634346458006" />
-    <state width="1802" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1634196437715" />
-    <state width="1802" height="275" key="GridCell.Tab.0.center" timestamp="1634346458005">
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1636993333669" />
+    <state width="1802" height="266" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1639068761242" />
+    <state width="1802" height="266" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1638078562723" />
+    <state width="1802" height="266" key="GridCell.Tab.0.center" timestamp="1639068761241">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="275" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1634346458005" />
-    <state width="1802" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1634196437713" />
-    <state width="1802" height="275" key="GridCell.Tab.0.left" timestamp="1634346458005">
+    <state width="1874" height="275" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1636993333669" />
+    <state width="1802" height="266" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1639068761241" />
+    <state width="1802" height="266" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1638078562722" />
+    <state width="1802" height="266" key="GridCell.Tab.0.left" timestamp="1639068761241">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="275" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1634346458005" />
-    <state width="1802" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1634196437711" />
-    <state width="1802" height="275" key="GridCell.Tab.0.right" timestamp="1634346458006">
+    <state width="1874" height="275" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1636993333669" />
+    <state width="1802" height="266" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1639068761241" />
+    <state width="1802" height="266" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1638078562722" />
+    <state width="1802" height="266" key="GridCell.Tab.0.right" timestamp="1639068761242">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="275" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1634346458006" />
-    <state width="1802" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1634196437714" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1636993333669" />
+    <state width="1802" height="266" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1639068761242" />
+    <state width="1802" height="266" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1638078562723" />
     <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1634055286407">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

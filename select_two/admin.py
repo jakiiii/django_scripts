@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import Language, Entry, EntryName
+
+from .models import (
+    Language, Entry, EntryName, Country
+)
 
 
 @admin.register(Language)
@@ -15,3 +18,8 @@ class EntryAdmin(admin.ModelAdmin):
 @admin.register(EntryName)
 class EntryNameAdmin(admin.ModelAdmin):
     list_display = ['name']
+
+
+@admin.register(Country)
+class CountryAdmin(admin.ModelAdmin):
+    list_display = ['id']

@@ -38,18 +38,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
 ]
 
 THIRD_PARTY_APPS = [
     'widget_tweaks',
     'django_celery_beat',
-    'django_celery_results'
+    'django_celery_results',
+    'rest_framework',
+    'rest_framework_jwt',
+    'django_filters',
+    'leaflet',
 ]
 
 LOCAL_APPS = [
     'home',
     'select_two',
     'celery_task',
+    'excelhandling',
+    'multiple_image',
+    'dfilters',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
@@ -89,10 +97,23 @@ WSGI_APPLICATION = 'django_scripts.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'djscripts',
+        'USER': 'jaki',
+        'PASSWORD': '101119',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -209,3 +230,29 @@ CACHES = {
         'LOCATION': 'cachedb',
     }
 }
+
+
+# leaflet
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (23.806220589190477, 90.39348745815941),
+    'DEFAULT_ZOOM': 5,
+    'MAX_ZOOM': 20,
+    'MIN_ZOOM': 3,
+    'SCALE': 'both',
+    'ATTRIBUTION_PREFIX': 'Inspired by Life in GIS'
+}
+
+
+# install GDAL
+# pip install --global-option=build_ext --global-option="-I/usr/include/gdal" GDAL==`gdal-config --version`
+if os.name == 'nt':
+    VENV_BASE = os.environ('VIRTUAL_ENV')
+    os.environ['path'] = os.path.join(
+        VENV_BASE,
+        '/home/jaki/Dev/django_scripts/venv/lib/python3.8/site-packages/osgeo' + ';' + os.environ['PATH']
+    )
+    os.environ['PROJ_LIB'] = os.path.join(
+        VENV_BASE,
+        '/home/jaki/Dev/django_scripts/venv/lib/python3.8/site-packages/osgeo/data/proj' + ';' + os.environ['PATH']
+    )
+

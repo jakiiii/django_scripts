@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import Language, Entry
-from .forms import EntryCreationForm, EntryMultipleCreationForm
+from .forms import EntryCreationForm, EntryMultipleCreationForm, CountryCreationForm
 
 
 def select_searching(request):
@@ -36,3 +36,20 @@ def select_multiple(request):
         'languages': languages
     }
     return render(request, 'select_two/multiple_select.html', context)
+
+
+def array_country_name(request):
+    form = CountryCreationForm()
+    if request.method == "POST":
+        form = CountryCreationForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            print(instance.name)
+            form.save()
+            return redirect('sel:country-multiple')
+        else:
+            return redirect('home:home')
+    context = {
+        'form': form,
+    }
+    return render(request, 'select_two/country.html', context)

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Django Filters || {{ block.super }}{% endblock %}
+
+
+{% block container %}
+    <h3>Filter Journals</h3>
+    <hr/>
+    <div class="card">
+        <div class="card-body">
+            <form method="GET" action=".">
+                <div class="form-group p-2">
+                    <input type="text" name="title_contains" class="form-control" id="inputAddress"
+                           placeholder="Title contains">
+                </div>
+                <div class="form-group p-2">
+                    <input type="text" name="id_exact" class="form-control" id="inputAddress2" placeholder="ID exact">
+                </div>
+                <div class="form-group p-2">
+                    <input type="text" name="title_or_author" class="form-control" id="inputAddress2"
+                           placeholder="Title or author">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group col-md-12 p-2">
+                                    <label for="minViewCount" class="p-1">Minimum View Count</label>
+                                    <input type="number" name="view_count_min" min="0" class="form-control"
+                                           id="minViewCount" placeholder="0">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-12 p-2">
+                                        <label for="maxViewCount" class="p-1">Maximum View Count</label>
+                                        <input type="number" name="view_count_max" min="0" class="form-control"
+                                               id="maxViewCount" placeholder="10000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-12 p-2">
+                                        <label for="publishDateMin" class="p-1">Publish date minimum</label>
+                                        <input type="date" name="date_min" class="form-control" id="publishDateMin">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-12 p-2">
+                                        <label for="publishDateMax" class="p-1">Publish date maximum</label>
+                                        <input type="date" name="date_max" class="form-control" id="publishDateMax">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group col-md-12 p-2">
+                            <label for="category" class="p-1">Category</label>
+                            <select name="category" id="category" class="form-control">
+                                <option selected>Choose...</option>
+                                {% for category in categories %}
+                                    <option value="{{ category }}">{{ category }}</option>
+                                {% empty %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group p-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="reviewed" id="reviewed">
+                        <label class="form-check-label" for="reviewed">Reviewed</label>
+                    </div>
+                </div>
+                <div class="form-group p-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="not_reviewed" id="notReviewed">
+                        <label class="form-check-label" for="notReviewed">Not Reviewed</label>
+                    </div>
+                </div>
+                <div class="form-group p-2">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row py-4">
+        <ul class="list-group list-group-flush">
+            {% for journal in journal_qs %}
+                <li class="list-group-item">
+                    {{ journal.title }}
+                    <span>Author: {{ journal.author.name }}</span>
+                    <span>
+                        {% for ca in journal.categories.all %}
+                            {{ cat }}
+                        {% endfor %}
+                    </span>
+                    <span>Publish date: {{ journal.publish_date }}</span>
+                    <span>View count: {{ journal.views }}</span>
+                    <span>Reviewed: {{ journal.reviewed }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
