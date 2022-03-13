@@ -27,6 +27,9 @@ urlpatterns = [
     path('task/', include('celery_task.urls', namespace='task')),
     path('excel/', include('excelhandling.urls', namespace='excel')),
     path('filter/', include('dfilters.urls', namespace='dfilter')),
+    path('geodj/', include('geodj.urls', namespace='geodj')),
+    path('apifilter/', include('apifilter.urls', namespace='apifilter')),
+
     path('api/filter/', include('dfilters.api.urls', namespace='api_dfilter')),
     path('api/images/', include('multiple_image.api.urls', namespace='images')),
 ]

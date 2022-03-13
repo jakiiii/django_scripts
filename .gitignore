@@ -151,3 +151,15 @@ typings/
 *.pot
 *.pyc
 __pycache__/
+
+# DB
+*.sqlite3
+
+# cdn
+*static_cdn/
+static_cdn/*
+
+# media
+media/
+*media/
+media/*
