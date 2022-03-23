@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Documents || {{ block.super }}{% endblock %}
+
+
+{% block container %}
+    <h3>{{ documents.product }}</h3>
+    <hr/>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Key</th>
+            <th scope="col">Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Name</th>
+            <td>{{ documents.customer.first_name }} {{ documents.customer.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Product</th>
+            <td>{{ documents.product }}</td>
+        </tr>
+        <tr>
+            <th>Quantity</th>
+            <td>{{ documents.quantity }}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>{{ documents.price }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

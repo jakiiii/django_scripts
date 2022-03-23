@@ -58,8 +58,8 @@ LOCAL_APPS = [
     'excelhandling',
     'multiple_image',
     'dfilters',
-    'geodj',
     'apifilter',
+    'generatedocuments',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS

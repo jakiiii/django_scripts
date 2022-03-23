@@ -158,6 +158,8 @@ __pycache__/
 # cdn
 *static_cdn/
 static_cdn/*
+*staticfiles/
+staticfiles/*
 
 # media
 media/

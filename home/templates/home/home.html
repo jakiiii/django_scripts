@@ -57,5 +57,15 @@
                 </li>
             </ul>
         </div>
+        <div class="col-4">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">PDF</li>
+                <li class="list-group-item"><a href="{% url 'documents:doc-list' %}" class="btn">Generate PDF</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">WeasyPrint</p>
+                    <p type="button" class="btn btn-warning btn-sm">pdf</p>
+                </li>
+            </ul>
+        </div>
     </div>
 {% endblock %}
