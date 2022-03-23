@@ -52,14 +52,15 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'home',
-    'select_two',
-    'celery_task',
-    'excelhandling',
-    'multiple_image',
-    'dfilters',
-    'apifilter',
-    'generatedocuments',
+    'apps.home',
+    'apps.select_two',
+    'apps.celery_task',
+    'apps.excelhandling',
+    'apps.multiple_image',
+    'apps.dfilters',
+    'apps.apifilter',
+    'apps.generatedocuments',
+    'apps.auth_opt',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
