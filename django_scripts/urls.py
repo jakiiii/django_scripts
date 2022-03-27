@@ -22,16 +22,17 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls', namespace='home')),
-    path('sel/', include('select_two.urls', namespace='sel')),
-    path('task/', include('celery_task.urls', namespace='task')),
-    path('excel/', include('excelhandling.urls', namespace='excel')),
-    path('filter/', include('dfilters.urls', namespace='dfilter')),
-    path('apifilter/', include('apifilter.urls', namespace='apifilter')),
-    path('generate', include('generatedocuments.urls', namespace='documents')),
+    path('', include('apps.home.urls', namespace='home')),
+    path('sel/', include('apps.select_two.urls', namespace='sel')),
+    path('task/', include('apps.celery_task.urls', namespace='task')),
+    path('excel/', include('apps.excelhandling.urls', namespace='excel')),
+    path('filter/', include('apps.dfilters.urls', namespace='dfilter')),
+    path('apifilter/', include('apps.apifilter.urls', namespace='apifilter')),
+    path('generate', include('apps.generatedocuments.urls', namespace='documents')),
 
-    path('api/filter/', include('dfilters.api.urls', namespace='api_dfilter')),
-    path('api/images/', include('multiple_image.api.urls', namespace='images')),
+    path('api/auth/', include('apps.authotp.urls', namespace='auth')),
+    path('api/filter/', include('apps.dfilters.api.urls', namespace='api_dfilter')),
+    path('api/images/', include('apps.multiple_image.api.urls', namespace='images')),
 ]
 
 
