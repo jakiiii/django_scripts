@@ -30,7 +30,7 @@ urlpatterns = [
     path('apifilter/', include('apps.apifilter.urls', namespace='apifilter')),
     path('generate', include('apps.generatedocuments.urls', namespace='documents')),
 
-    path('api/auth/', include('apps.auth_opt.urls', namespace='auth')),
+    path('api/auth/', include('apps.authotp.urls', namespace='auth')),
     path('api/filter/', include('apps.dfilters.api.urls', namespace='api_dfilter')),
     path('api/images/', include('apps.multiple_image.api.urls', namespace='images')),
 ]

@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-pnp_sc!@^pi-)i*+82+o+mac!06db5v_$i0p2jn-i0p4%syql&
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+AUTH_USER_MODEL = 'authotp.User'
+AUTHENTICATION_BACKENDS = ['apps.authotp.backends.EmailBackend']
 
 # Application definition
 
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'django.contrib.sites',
 ]
 
 THIRD_PARTY_APPS = [
@@ -60,7 +62,7 @@ LOCAL_APPS = [
     'apps.dfilters',
     'apps.apifilter',
     'apps.generatedocuments',
-    'apps.auth_opt',
+    'apps.authotp',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
@@ -192,11 +194,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # G-mail send email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'pakijadjangoproject@gmail.com'
 EMAIL_HOST_PASSWORD = 'a$$4u1tpakija'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'jTro | Celery Task Management (pakijadjangoproject@gmail.com)'
+# DEFAULT_FROM_EMAIL = 'jTro | Celery Task Management (pakijadjangoproject@gmail.com)'
 # BASE_URL = '127.0.0.1:8000'
 #
 # MANAGERS = [
