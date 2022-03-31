@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
     'rest_framework_jwt',
     'django_filters',
     'leaflet',
+    'taggit',
 ]
 
 LOCAL_APPS = [

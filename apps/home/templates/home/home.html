@@ -4,22 +4,26 @@
 
 {% block container %}
     <div class="row">
-        <div class="col-4">
+        <div class="col-4 py-2">
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action list-group-item-dark active">Select2</li>
-                <li class="list-group-item"><a href="{% url 'sel:select-search' %}" class="btn">Select2 - Single Select Search</a></li>
-                <li class="list-group-item"><a href="{% url 'sel:select-multiple' %}" class="btn">Select2 - Dropdown Multiple Select</a></li>
-                <li class="list-group-item"><a href="{% url 'sel:country-multiple' %}" class="btn">Country Multiple Select</a></li>
+                <li class="list-group-item"><a href="{% url 'sel:select-search' %}" class="btn">Select2 - Single Select
+                    Search</a></li>
+                <li class="list-group-item"><a href="{% url 'sel:select-multiple' %}" class="btn">Select2 - Dropdown
+                    Multiple Select</a></li>
+                <li class="list-group-item"><a href="{% url 'sel:country-multiple' %}" class="btn">Country Multiple
+                    Select</a></li>
                 <li class="list-group-item">
                     <p type="button" class="btn btn-warning btn-sm">search box</p>
                     <p type="button" class="btn btn-warning btn-sm">multiple select</p>
                 </li>
             </ul>
         </div>
-        <div class="col-4">
+        <div class="col-4 py-2">
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action list-group-item-dark active">Celery</li>
-                <li class="list-group-item"><a href="{% url 'task:send-review-email' %}" class="btn">Celery - Send Review Email</a></li>
+                <li class="list-group-item"><a href="{% url 'task:send-review-email' %}" class="btn">Celery - Send
+                    Review Email</a></li>
                 <li class="list-group-item">
                     <p type="button" class="btn btn-warning btn-sm">rabbitmq</p>
                     <p type="button" class="btn btn-warning btn-sm">celery</p>
@@ -29,7 +33,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-4">
+        <div class="col-4 py-2">
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action list-group-item-dark active">Export Import Excel</li>
                 <li class="list-group-item"><a href="{% url 'excel:export-excel' %}" class="btn">Export Excel</a></li>
@@ -42,22 +46,21 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-4">
+        <br/>
+        <div class="col-4 py-2">
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action list-group-item-dark active">Django Filter</li>
                 <li class="list-group-item"><a href="{% url 'dfilter:filter' %}" class="btn">Filter</a></li>
                 <li class="list-group-item"><a href="{% url 'api_dfilter:api-filter' %}" class="btn">API Filter</a></li>
-                <li class="list-group-item"><a href="{% url 'apifilter:users-filter-api' %}" class="btn">Users Filter (API)</a></li>
+                <li class="list-group-item"><a href="{% url 'apifilter:users-filter-api' %}" class="btn">Users Filter
+                    (API)</a></li>
                 <li class="list-group-item">
                     <p type="button" class="btn btn-warning btn-sm">django-filter</p>
                     <p type="button" class="btn btn-warning btn-sm">api-filter</p>
                 </li>
             </ul>
         </div>
-        <div class="col-4">
+        <div class="col-4 py-2">
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action list-group-item-dark active">PDF</li>
                 <li class="list-group-item"><a href="{% url 'documents:doc-list' %}" class="btn">Generate PDF</a></li>
@@ -67,5 +70,51 @@
                 </li>
             </ul>
         </div>
+        <div class="col-4 py-2">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">Registration with OTP
+                </li>
+                <li class="list-group-item"><a href="{% url 'auth:register' %}" class="btn">User Resister</a></li>
+                <li class="list-group-item"><a href="{% url 'auth:verify-otp' %}" class="btn">Verify OTP</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">DRF</p>
+                    <p type="button" class="btn btn-warning btn-sm">OTP</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-4 py-2">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">Push Notification</li>
+                <li class="list-group-item"><a href="#" class="btn">Firebase Push Notification</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">Firebase</p>
+                    <p type="button" class="btn btn-warning btn-sm">Push Notification</p>
+                </li>
+            </ul>
+        </div>
     </div>
 {% endblock %}
+
+
+<div class="row">
+    {% for context in menu_context %}
+        <div class="col-4 py-2">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">{{ context.category }}</li>
+
+                {% for menu in context.menus.all %}
+                    <li class="list-group-item">
+                        <a href="{{ menu.link }}" class="btn">{{ menu.name }}</a>
+                        <a href="{% url 'sel:select-search' %}" class="btn">{{ menu.name }}</a>
+                    </li>
+                {% endfor %}
+
+                <li class="list-group-item">
+                    {% for tag in context.tags.all %}
+                        <p type="button" class="btn btn-warning btn-sm">{{ tag.name }}</p>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+</div>
