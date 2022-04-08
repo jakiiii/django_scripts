@@ -10,13 +10,10 @@ class EmailBackend(ModelBackend):
         username = email
         User = get_user_model()
         try:
-            print(kwargs)
             email = kwargs.get('username')
             user = User.objects.get(Q(email__iexact=email))
-            print(password)
             login(request, user)
         except Exception as e:
-            print(e)
             User().set_password(password)
             return
         except User.MultipleObjectsReturned:

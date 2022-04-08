@@ -92,6 +92,15 @@
                 </li>
             </ul>
         </div>
+        <div class="col-4 py-2">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-dark active">File Converter</li>
+                <li class="list-group-item"><a href="{% url 'converter:img-to-pdf' %}" class="btn">Image to PDF</a></li>
+                <li class="list-group-item">
+                    <p type="button" class="btn btn-warning btn-sm">FPDF</p>
+                </li>
+            </ul>
+        </div>
     </div>
 {% endblock %}
 

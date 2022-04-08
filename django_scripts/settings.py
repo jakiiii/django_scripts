@@ -64,6 +64,7 @@ LOCAL_APPS = [
     'apps.apifilter',
     'apps.generatedocuments',
     'apps.authotp',
+    'apps.converter',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS

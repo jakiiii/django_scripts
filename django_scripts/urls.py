@@ -28,7 +28,8 @@ urlpatterns = [
     path('excel/', include('apps.excelhandling.urls', namespace='excel')),
     path('filter/', include('apps.dfilters.urls', namespace='dfilter')),
     path('apifilter/', include('apps.apifilter.urls', namespace='apifilter')),
-    path('generate', include('apps.generatedocuments.urls', namespace='documents')),
+    path('generate/', include('apps.generatedocuments.urls', namespace='documents')),
+    path('converter/', include('apps.converter.urls', namespace='converter')),
 
     path('api/auth/', include('apps.authotp.urls', namespace='auth')),
     path('api/filter/', include('apps.dfilters.api.urls', namespace='api_dfilter')),
