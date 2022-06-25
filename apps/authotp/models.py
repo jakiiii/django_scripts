@@ -88,9 +88,7 @@ class User(AbstractUser):
         return self.email
 
 
-'''  ALL SIGNALS HERE  '''
-
-
+# ALL SIGNALS HERE
 @receiver(user_logged_in)
 def _user_logged_in(sender, user, request, **kwargs):
     try:
